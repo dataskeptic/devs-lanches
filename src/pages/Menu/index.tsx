@@ -1,3 +1,14 @@
+import { Outlet } from 'react-router';
+
+import { Sidebar } from '../../components/Sidebar';
+
+import { Container } from './styles';
+
 export function Menu() {
-	return <h1>Menu</h1>;
+	return (
+		<Container>
+			<Sidebar />
+			<Outlet />
+		</Container>
+	);
 }
