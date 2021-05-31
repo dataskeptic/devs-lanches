@@ -1,3 +1,9 @@
+import { SnackTitle } from '../../../components/SnackTitle';
+
 export function Pizzas() {
-	return <h1>Pizzas</h1>;
+	return (
+		<>
+			<SnackTitle>Pizzas</SnackTitle>
+		</>
+	);
 }

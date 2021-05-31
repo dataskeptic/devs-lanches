@@ -5,4 +5,13 @@ export const Container = styled.main`
 	min-height: 100vh;
 
 	display: flex;
+
+	> section {
+		padding: 2rem 1.875rem;
+
+		img {
+			width: 10rem;
+			margin-bottom: 2rem;
+		}
+	}
 `;

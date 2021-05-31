@@ -1,3 +1,9 @@
+import { SnackTitle } from '../../../components/SnackTitle';
+
 export function IceCreams() {
-	return <h1>IceCreams</h1>;
+	return (
+		<>
+			<SnackTitle>Sorvetes</SnackTitle>
+		</>
+	);
 }
