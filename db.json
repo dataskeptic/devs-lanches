@@ -1,0 +1,197 @@
+{
+	"burgers": [
+		{
+			"id": 1,
+			"snack": "burger",
+			"name": "Mega",
+			"description": "",
+			"price": 25.5,
+			"image": "https://i.imgur.com/upjIUnG.jpg"
+		},
+		{
+			"id": 2,
+			"snack": "burger",
+			"name": "Extra Bacon",
+			"description": "",
+			"price": 23.5,
+			"image": "https://i.imgur.com/B4J04AJ.jpg"
+		},
+		{
+			"id": 3,
+			"snack": "burger",
+			"name": "Tradicional",
+			"description": "",
+			"price": 12,
+			"image": "https://i.imgur.com/Jz506jB.jpg"
+		},
+		{
+			"id": 4,
+			"snack": "burger",
+			"name": "Big Carne",
+			"description": "",
+			"price": 18.0,
+			"image": "https://i.imgur.com/bF8EdBb.jpg"
+		},
+		{
+			"id": 5,
+			"snack": "burger",
+			"name": "Carne dupla",
+			"description": "",
+			"price": 20,
+			"image": "https://i.imgur.com/fdEY2kY.jpg"
+		}
+	],
+
+	"pizzas": [
+		{
+			"id": 1,
+			"snack": "pizza",
+			"name": "Calabresa",
+			"description": "Calabresa, cebola, mussarela e orégano.",
+			"price": 25,
+			"image": "https://i.imgur.com/5rjJGkV.jpg"
+		},
+		{
+			"id": 2,
+			"snack": "pizza",
+			"name": "Portuguesa",
+			"description": "",
+			"price": 28.5,
+			"image": "https://i.imgur.com/WCoyGoI.png"
+		},
+		{
+			"id": 3,
+			"snack": "pizza",
+			"name": "Frango com Catupiry",
+			"description": "",
+			"price": 24,
+			"image": "https://i.imgur.com/BuXrO8d.jpg"
+		},
+		{
+			"id": 4,
+			"snack": "pizza",
+			"name": "Napolitana",
+			"description": "",
+			"price": 30,
+			"image": "https://i.imgur.com/u3DfvCE.jpg"
+		},
+		{
+			"id": 5,
+			"snack": "pizza",
+			"name": "Mussarela",
+			"description": "",
+			"price": 20.5,
+			"image": "https://i.imgur.com/kPNXpa0.jpg"
+		},
+		{
+			"id": 6,
+			"snack": "pizza",
+			"name": "Marguerita",
+			"description": "",
+			"price": 25.5,
+			"image": "https://i.imgur.com/AsEfsZN.jpg"
+		},
+		{
+			"id": 7,
+			"snack": "pizza",
+			"name": "Brigadeiro com Morango",
+			"description": "",
+			"price": 35.0,
+			"image": "https://i.imgur.com/43yC2Ap.jpg"
+		},
+		{
+			"id": 8,
+			"snack": "pizza",
+			"name": "Banana",
+			"description": "",
+			"price": 33.5,
+			"image": "https://i.imgur.com/Pcrgg1P.jpg"
+		},
+		{
+			"id": 9,
+			"snack": "pizza",
+			"name": "Chocolate",
+			"description": "",
+			"price": 30,
+			"image": "https://i.imgur.com/RahAKkH.jpg"
+		}
+	],
+
+	"drinks": [
+		{
+			"id": 1,
+			"snack": "drink",
+			"name": "Coca-Cola 2L",
+			"description": "",
+			"price": 12,
+			"image": "https://i.imgur.com/Lg3aKhf.jpg"
+		},
+		{
+			"id": 2,
+			"snack": "drink",
+			"name": "Guaraná",
+			"description": "",
+			"price": 6.5,
+			"image": "https://i.imgur.com/hOBrOIm.jpg"
+		},
+		{
+			"id": 3,
+			"snack": "drink",
+			"name": "Suco de Abacaxi",
+			"description": "",
+			"price": 8,
+			"image": "https://i.imgur.com/VV9qTMh.jpg"
+		},
+		{
+			"id": 4,
+			"snack": "drink",
+			"name": "Suco de Laranja",
+			"description": "",
+			"price": 8,
+			"image": "https://i.imgur.com/2Lf2gHy.jpg"
+		}
+	],
+
+	"ice-creams": [
+		{
+			"id": 1,
+			"snack": "ice-cream",
+			"name": "Casquinha",
+			"description": "",
+			"price": 4.5,
+			"image": "https://i.imgur.com/YGmeoCm.jpg"
+		},
+		{
+			"id": 2,
+			"snack": "ice-cream",
+			"name": "Chocolate com granulado",
+			"description": "",
+			"price": 6,
+			"image": "https://i.imgur.com/osAHOLe.jpg"
+		},
+		{
+			"id": 3,
+			"snack": "ice-cream",
+			"name": "Flocos",
+			"description": "",
+			"price": 7,
+			"image": "https://i.imgur.com/qgnFLiy.jpg"
+		},
+		{
+			"id": 4,
+			"snack": "ice-cream",
+			"name": "Creme",
+			"description": "",
+			"price": 6.5,
+			"image": "https://i.imgur.com/dFLysrT.jpg"
+		},
+		{
+			"id": 5,
+			"snack": "ice-cream",
+			"name": "Morango",
+			"description": "",
+			"price": 10,
+			"image": "https://i.imgur.com/0TWnEI7.jpg"
+		}
+	]
+}
