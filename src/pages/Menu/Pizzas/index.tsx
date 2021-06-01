@@ -1,22 +1,15 @@
-import { useEffect } from 'react';
-
-import { api } from '../../../services/api';
-
 import { SnackTitle } from '../../../components/SnackTitle';
+import { Snacks } from '../../../components/Snacks';
+
+import useSnack from '../../../contexts/SnackContext';
 
 export function Pizzas() {
-	useEffect(() => {
-		async function getPizzas() {
-			const { data } = await api.get('/pizzas');
-			console.log(data);
-		}
-
-		getPizzas();
-	}, []);
+	const { pizzas } = useSnack();
 
 	return (
 		<>
 			<SnackTitle>Pizzas</SnackTitle>
+			<Snacks snacks={pizzas} />
 		</>
 	);
 }

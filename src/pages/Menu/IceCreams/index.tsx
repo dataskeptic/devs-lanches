@@ -1,22 +1,15 @@
-import { useEffect } from 'react';
-
-import { api } from '../../../services/api';
-
 import { SnackTitle } from '../../../components/SnackTitle';
+import { Snacks } from '../../../components/Snacks';
+
+import useSnack from '../../../contexts/SnackContext';
 
 export function IceCreams() {
-	useEffect(() => {
-		async function getIceCreams() {
-			const { data } = await api.get('/ice-creams');
-			console.log(data);
-		}
-
-		getIceCreams();
-	}, []);
+	const { iceCreams } = useSnack();
 
 	return (
 		<>
 			<SnackTitle>Sorvetes</SnackTitle>
+			<Snacks snacks={iceCreams} />
 		</>
 	);
 }
