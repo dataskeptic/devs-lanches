@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import { OrderProvider } from './contexts/OrderContext';
 import { SnackProvider } from './contexts/SnackContext';
 
 import { AppRoutes } from './routes';
@@ -9,8 +10,10 @@ export function App() {
 	return (
 		<BrowserRouter>
 			<SnackProvider>
-				<AppRoutes />
-				<GlobalStyle />
+				<OrderProvider>
+					<AppRoutes />
+					<GlobalStyle />
+				</OrderProvider>
 			</SnackProvider>
 		</BrowserRouter>
 	);

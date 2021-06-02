@@ -2,12 +2,15 @@ import { FiPlus } from 'react-icons/fi';
 
 import { SnackData } from '../../interface/snackData';
 import { currencyFormat } from '../../helpers/currencyFormat';
+import { useOrder } from '../../contexts/OrderContext';
 
 interface SnacksProps {
 	snacks: SnackData[];
 }
 
 export function Snacks({ snacks }: SnacksProps) {
+	const { addSnackIntoCart } = useOrder();
+
 	return (
 		<div className="snacks">
 			{snacks.map((snack) => (
@@ -17,7 +20,7 @@ export function Snacks({ snacks }: SnacksProps) {
 					<p>{snack.description}</p>
 					<div>
 						<strong>{currencyFormat(snack.price)}</strong>
-						<button type="button">
+						<button type="button" onClick={() => addSnackIntoCart(snack)}>
 							<FiPlus />
 						</button>
 					</div>
