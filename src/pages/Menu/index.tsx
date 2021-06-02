@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router';
 
-import { Sidebar } from '../../components/Sidebar';
-
 import logoImg from '../../assets/logo.svg';
+
+import { Sidebar } from '../../components/Sidebar';
+import { MyOrder } from '../../components/MyOrder';
 
 import { Container } from './styles';
 
@@ -15,6 +16,8 @@ export function Menu() {
 				<img src={logoImg} alt="Dev Lanches" />
 				<Outlet />
 			</section>
+
+			<MyOrder />
 		</Container>
 	);
 }
