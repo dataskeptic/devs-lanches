@@ -17,6 +17,7 @@ interface Snack extends SnackData {
 }
 
 interface OrderContextProps {
+	cart: Snack[];
 	addSnackIntoCart: (snack: SnackData) => void;
 }
 
@@ -55,7 +56,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
 	}
 
 	return (
-		<OrderContext.Provider value={{ addSnackIntoCart }}>
+		<OrderContext.Provider value={{ cart, addSnackIntoCart }}>
 			{children}
 		</OrderContext.Provider>
 	);
