@@ -10,10 +10,24 @@ import { Empty } from '../Empty';
 
 import { Container, Footer } from './styles';
 
+interface Snack {
+	id: number;
+	snack: string;
+	quantity: number;
+}
+
 export function Table() {
-	const { cart } = useOrder();
+	const { cart, updateCart } = useOrder();
 
 	if (cart.length === 0) return <Empty />;
+
+	function handleProductIncrement({ id, snack, quantity }: Snack) {
+		updateCart({ id, snack, newQuantity: quantity + 1 });
+	}
+
+	function handleProductDecrement({ id, snack, quantity }: Snack) {
+		updateCart({ id, snack, newQuantity: quantity - 1 });
+	}
 
 	return (
 		<Container>
@@ -29,7 +43,7 @@ export function Table() {
 				</thead>
 				<tbody>
 					{cart.map((item) => (
-						<tr>
+						<tr key={item.id}>
 							<td>
 								<img src={item.image} alt={item.name} />
 							</td>
@@ -39,11 +53,17 @@ export function Table() {
 							</td>
 							<td>
 								<div>
-									<button type="button">
+									<button
+										type="button"
+										onClick={() => handleProductDecrement(item)}
+									>
 										<img src={minusImg} alt="Adicionar quantidade" />
 									</button>
 									<span>{`${item.quantity}`.padStart(2, '0')}</span>
-									<button type="button">
+									<button
+										type="button"
+										onClick={() => handleProductIncrement(item)}
+									>
 										<img src={plusImg} alt="Diminuir quantidade" />
 									</button>
 								</div>

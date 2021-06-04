@@ -1,12 +1,3 @@
-/*
-[] cart array
-  [] snack
-    [] interface SnackData
-    [] quantity
-
-[] add a snack into cart
-*/
-
 import { createContext, ReactNode, useContext, useState } from 'react';
 
 import { SnackData } from '../interface/snackData';
@@ -16,9 +7,16 @@ interface Snack extends SnackData {
 	subtotal: number;
 }
 
+interface UpdateCartProps {
+	id: number;
+	snack: string;
+	newQuantity: number;
+}
+
 interface OrderContextProps {
 	cart: Snack[];
 	addSnackIntoCart: (snack: SnackData) => void;
+	updateCart: ({ id, snack, newQuantity }: UpdateCartProps) => void;
 }
 
 interface OrderProviderProps {
@@ -29,6 +27,32 @@ const OrderContext = createContext({} as OrderContextProps);
 
 export function OrderProvider({ children }: OrderProviderProps) {
 	const [cart, setCart] = useState<Snack[]>([]);
+
+	function updateCart({ id, snack, newQuantity }: UpdateCartProps) {
+		if (newQuantity <= 0) return;
+
+		const snackExistentInCart = cart.find(
+			(item) => item.snack === snack && item.id === id,
+		);
+
+		if (!snackExistentInCart) return;
+
+		const newCart = cart.map((item) => {
+			if (
+				item.snack === snackExistentInCart.snack &&
+				item.id === snackExistentInCart.id
+			)
+				return {
+					...item,
+					quantity: newQuantity,
+					subtotal: item.price * newQuantity,
+				};
+
+			return item;
+		});
+
+		setCart(newCart);
+	}
 
 	function addSnackIntoCart(snack: SnackData) {
 		const snackExistentInCart = cart.find(
@@ -56,7 +80,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
 	}
 
 	return (
-		<OrderContext.Provider value={{ cart, addSnackIntoCart }}>
+		<OrderContext.Provider value={{ cart, addSnackIntoCart, updateCart }}>
 			{children}
 		</OrderContext.Provider>
 	);
