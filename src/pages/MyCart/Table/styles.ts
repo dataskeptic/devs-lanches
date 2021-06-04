@@ -1,0 +1,163 @@
+import styled from 'styled-components';
+import { darken } from 'polished';
+
+export const Container = styled.main`
+	background: var(--black);
+	padding: 2rem 2.5rem;
+	border-radius: 8px;
+
+	table {
+		width: 100%;
+		border-spacing: 0 0;
+		border-collapse: collapse;
+
+		th {
+			padding: 0 1rem 0.5rem 1rem;
+
+			font-weight: 500;
+			font-size: 1.125rem;
+			text-transform: uppercase;
+			text-align: left;
+
+			&:nth-child(2) {
+				padding-left: 2rem;
+			}
+		}
+
+		td {
+			padding: 1.5rem 1rem 1.5rem 1rem;
+			padding-top: 1.5rem;
+			border-bottom: 1px solid var(--black-light);
+
+			h4 {
+				margin-bottom: 0.5rem;
+				font-weight: 400;
+				font-size: 1.125rem;
+			}
+
+			> span {
+				font-weight: 700;
+				font-size: 1.5rem;
+			}
+
+			div {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+
+				button {
+					background: none;
+					flex: 0;
+					border: none;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					img {
+						width: 1.25rem;
+					}
+				}
+
+				span {
+					display: block;
+					background: var(--white);
+					padding: 0.125rem 0.75rem;
+					border-radius: 4px;
+
+					font-weight: 500;
+					font-size: 1.25rem;
+					color: var(--black);
+				}
+			}
+
+			h5 {
+				font-weight: 700;
+				font-size: 1.5rem;
+			}
+
+			&:first-child {
+				width: 7.5rem;
+				padding-left: 0;
+				padding-right: 0;
+
+				img {
+					object-fit: cover;
+					width: 7.5rem;
+					height: 7.5rem;
+					border-radius: 8px;
+				}
+			}
+
+			&:nth-child(2) {
+				padding-left: 2rem;
+			}
+
+			&:nth-child(3),
+			&:nth-child(4) {
+				width: 11rem;
+			}
+
+			&:last-child {
+				width: 1.5rem;
+				padding-right: 0;
+
+				button {
+					background: none;
+					border: none;
+					width: 100%;
+
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+
+					svg {
+						fill: var(--yellow);
+						width: 1.5rem;
+						height: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+`;
+
+export const Footer = styled.footer`
+	padding-top: 1.5rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	button {
+		background: var(--red);
+		width: 100%;
+		max-width: 16.5rem;
+		min-height: 4rem;
+
+		border: none;
+		border-radius: 8px;
+
+		font-weight: 700;
+		font-size: 1.25rem;
+		text-transform: uppercase;
+		color: var(--white);
+
+		transition: background 0.3s;
+
+		&:hover {
+			background: ${darken(0.1, '#AA2424')};
+		}
+	}
+
+	span {
+		font-weight: 500;
+		text-transform: uppercase;
+
+		strong {
+			margin-left: 0.75rem;
+			font-weight: 700;
+			font-size: 2.25rem;
+		}
+	}
+`;
