@@ -33,6 +33,8 @@ export function Table() {
 		removeItemFromCart({ id, snack });
 	}
 
+	const totalAmount = cart.reduce((acc, item) => (acc += item.subtotal), 0);
+
 	return (
 		<Container>
 			<table>
@@ -88,7 +90,7 @@ export function Table() {
 			<Footer>
 				<button>Finalizar pedido</button>
 				<span>
-					Subtotal<strong>R$ 79,90</strong>
+					Total<strong>{currencyFormat(totalAmount)}</strong>
 				</span>
 			</Footer>
 		</Container>
