@@ -13,10 +13,16 @@ interface UpdateCartProps {
 	newQuantity: number;
 }
 
+interface RemoveItemFromCartProps {
+	id: number;
+	snack: string;
+}
+
 interface OrderContextProps {
 	cart: Snack[];
 	addSnackIntoCart: (snack: SnackData) => void;
 	updateCart: ({ id, snack, newQuantity }: UpdateCartProps) => void;
+	removeItemFromCart: ({ id, snack }: RemoveItemFromCartProps) => void;
 }
 
 interface OrderProviderProps {
@@ -27,6 +33,13 @@ const OrderContext = createContext({} as OrderContextProps);
 
 export function OrderProvider({ children }: OrderProviderProps) {
 	const [cart, setCart] = useState<Snack[]>([]);
+
+	function removeItemFromCart({ id, snack }: RemoveItemFromCartProps) {
+		const newCart = cart.filter(
+			(item) => !(item.snack === snack && item.id === id),
+		);
+		setCart(newCart);
+	}
 
 	function updateCart({ id, snack, newQuantity }: UpdateCartProps) {
 		if (newQuantity <= 0) return;
@@ -80,7 +93,9 @@ export function OrderProvider({ children }: OrderProviderProps) {
 	}
 
 	return (
-		<OrderContext.Provider value={{ cart, addSnackIntoCart, updateCart }}>
+		<OrderContext.Provider
+			value={{ cart, addSnackIntoCart, updateCart, removeItemFromCart }}
+		>
 			{children}
 		</OrderContext.Provider>
 	);

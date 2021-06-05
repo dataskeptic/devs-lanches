@@ -17,7 +17,7 @@ interface Snack {
 }
 
 export function Table() {
-	const { cart, updateCart } = useOrder();
+	const { cart, updateCart, removeItemFromCart } = useOrder();
 
 	if (cart.length === 0) return <Empty />;
 
@@ -27,6 +27,10 @@ export function Table() {
 
 	function handleProductDecrement({ id, snack, quantity }: Snack) {
 		updateCart({ id, snack, newQuantity: quantity - 1 });
+	}
+
+	function handleRemoveProduct({ id, snack }: Snack) {
+		removeItemFromCart({ id, snack });
 	}
 
 	return (
@@ -43,7 +47,7 @@ export function Table() {
 				</thead>
 				<tbody>
 					{cart.map((item) => (
-						<tr key={item.id}>
+						<tr key={`${item.snack}-${item.id}`}>
 							<td>
 								<img src={item.image} alt={item.name} />
 							</td>
@@ -72,7 +76,7 @@ export function Table() {
 								<h5>{currencyFormat(item.subtotal)}</h5>
 							</td>
 							<td>
-								<button type="button">
+								<button type="button" onClick={() => handleRemoveProduct(item)}>
 									<FaTrashAlt />
 								</button>
 							</td>
