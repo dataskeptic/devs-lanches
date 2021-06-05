@@ -1,4 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
+import { toast } from 'react-toastify';
+
+import { snackEmoji } from '../helpers/snackEmoji';
 
 import { SnackData } from '../interface/snackData';
 
@@ -39,6 +42,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
 			(item) => !(item.snack === snack && item.id === id),
 		);
 		setCart(newCart);
+		toast.error(`Lanche removido dos pedidos!`);
 	}
 
 	function updateCart({ id, snack, newQuantity }: UpdateCartProps) {
@@ -83,12 +87,21 @@ export function OrderProvider({ children }: OrderProviderProps) {
 			});
 
 			setCart(newCart);
+			toast.success(
+				`Outro(a) ${snackEmoji(snack.snack)} ${
+					snack.name
+				} adicionado aos pedidos!`,
+			);
 		} else {
 			const quantity = 1;
 			const subtotal = snack.price * quantity;
 
 			const newCartSnack = { ...snack, quantity, subtotal };
+
 			setCart((oldCart) => [...oldCart, newCartSnack]);
+			toast.success(
+				`${snackEmoji(snack.snack)} ${snack.name} adicionado aos pedidos!`,
+			);
 		}
 	}
 
