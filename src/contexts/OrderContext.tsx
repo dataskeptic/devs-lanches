@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
+import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 
 import { snackEmoji } from '../helpers/snackEmoji';
@@ -26,6 +27,7 @@ interface OrderContextProps {
 	addSnackIntoCart: (snack: SnackData) => void;
 	updateCart: ({ id, snack, newQuantity }: UpdateCartProps) => void;
 	removeItemFromCart: ({ id, snack }: RemoveItemFromCartProps) => void;
+	confirmOrder: () => void;
 }
 
 interface OrderProviderProps {
@@ -35,7 +37,14 @@ interface OrderProviderProps {
 const OrderContext = createContext({} as OrderContextProps);
 
 export function OrderProvider({ children }: OrderProviderProps) {
+	const navigate = useNavigate();
 	const [cart, setCart] = useState<Snack[]>([]);
+
+	function confirmOrder() {
+		setCart([]);
+		navigate('/');
+		toast.success('☑️ Pedido realizado!');
+	}
 
 	function removeItemFromCart({ id, snack }: RemoveItemFromCartProps) {
 		const newCart = cart.filter(
@@ -107,7 +116,13 @@ export function OrderProvider({ children }: OrderProviderProps) {
 
 	return (
 		<OrderContext.Provider
-			value={{ cart, addSnackIntoCart, updateCart, removeItemFromCart }}
+			value={{
+				cart,
+				addSnackIntoCart,
+				updateCart,
+				removeItemFromCart,
+				confirmOrder,
+			}}
 		>
 			{children}
 		</OrderContext.Provider>

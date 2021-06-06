@@ -17,9 +17,13 @@ interface Snack {
 }
 
 export function Table() {
-	const { cart, updateCart, removeItemFromCart } = useOrder();
+	const { cart, updateCart, removeItemFromCart, confirmOrder } = useOrder();
 
 	if (cart.length === 0) return <Empty />;
+
+	function handleConfirmOrder() {
+		confirmOrder();
+	}
 
 	function handleProductIncrement({ id, snack, quantity }: Snack) {
 		updateCart({ id, snack, newQuantity: quantity + 1 });
@@ -88,7 +92,9 @@ export function Table() {
 			</table>
 
 			<Footer>
-				<button>Finalizar pedido</button>
+				<button type="button" onClick={() => handleConfirmOrder()}>
+					Finalizar pedido
+				</button>
 				<span>
 					Total<strong>{currencyFormat(totalAmount)}</strong>
 				</span>
