@@ -67,7 +67,7 @@ export function SnackProvider({ children }: SnackProviderProps) {
 	);
 }
 
-export default function useSnack() {
+export function useSnack() {
 	const contextData = useContext(SnackContext);
 	return contextData;
 }

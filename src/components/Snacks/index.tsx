@@ -4,6 +4,7 @@ import { SnackData } from '../../interface/snackData';
 import { currencyFormat } from '../../helpers/currencyFormat';
 import { useOrder } from '../../contexts/OrderContext';
 
+import { Loading } from '../Loading';
 import { Container } from './styles';
 
 interface SnacksProps {
@@ -12,6 +13,8 @@ interface SnacksProps {
 
 export function Snacks({ snacks }: SnacksProps) {
 	const { cart, addSnackIntoCart } = useOrder();
+
+	if (!snacks.length) return <Loading />;
 
 	return (
 		<Container>
