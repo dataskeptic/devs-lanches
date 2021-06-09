@@ -41,8 +41,11 @@ export function OrderProvider({ children }: OrderProviderProps) {
 	const [cart, setCart] = useState<Snack[]>([]);
 
 	function confirmOrder() {
-		setCart([]);
-		navigate('/');
+		setTimeout(() => {
+			setCart([]);
+			navigate('/');
+		}, 250);
+
 		toast.success('☑️ Pedido realizado!');
 	}
 
