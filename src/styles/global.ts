@@ -46,4 +46,11 @@ export const GlobalStyle = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  .skeleton-wrapper {
+    background: var(--black);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
 `;
