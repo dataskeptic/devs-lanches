@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 
 	display: flex;
 	align-items: center;
