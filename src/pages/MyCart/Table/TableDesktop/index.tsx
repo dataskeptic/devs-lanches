@@ -6,8 +6,6 @@ import minusImg from '../../../../assets/circle-minus.svg';
 import { useOrder } from '../../../../contexts/OrderContext';
 import { currencyFormat } from '../../../../helpers/currencyFormat';
 
-import { Empty } from '../../Empty';
-
 import { Container } from './styles';
 import { ConfirmOrder } from '../../../../components/ConfirmOrder';
 
@@ -18,8 +16,6 @@ export function TableDesktop() {
 		handleProductDecrement,
 		handleRemoveProduct,
 	} = useOrder();
-
-	if (cart.length === 0) return <Empty />;
 
 	return (
 		<Container>
