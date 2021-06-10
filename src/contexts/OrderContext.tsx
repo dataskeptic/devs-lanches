@@ -43,11 +43,27 @@ interface OrderProviderProps {
 	children: ReactNode;
 }
 
+const localStorageItem = '@DevsLanches:cart';
+
 const OrderContext = createContext({} as OrderContextProps);
 
 export function OrderProvider({ children }: OrderProviderProps) {
 	const navigate = useNavigate();
-	const [cart, setCart] = useState<Snack[]>([]);
+	const [cart, setCart] = useState<Snack[]>(() => {
+		let cartInLocalStorage = localStorage.getItem(localStorageItem);
+
+		if (cartInLocalStorage) {
+			console.log('a');
+			return JSON.parse(cartInLocalStorage);
+		}
+		console.log('aqui');
+		return [];
+	});
+
+	function manageLocalStorage(items: Snack[]) {
+		const itemsToLocalStorage = JSON.stringify(items);
+		localStorage.setItem(localStorageItem, itemsToLocalStorage);
+	}
 
 	function confirmOrder() {
 		setTimeout(() => {
@@ -62,7 +78,9 @@ export function OrderProvider({ children }: OrderProviderProps) {
 		const newCart = cart.filter(
 			(item) => !(item.snack === snack && item.id === id),
 		);
+
 		setCart(newCart);
+		manageLocalStorage(newCart);
 		toast.error(`Lanche removido dos pedidos!`);
 	}
 
@@ -90,6 +108,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
 		});
 
 		setCart(newCart);
+		manageLocalStorage(newCart);
 	}
 
 	function addSnackIntoCart(snack: SnackData) {
@@ -108,6 +127,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
 			});
 
 			setCart(newCart);
+			manageLocalStorage(newCart);
 			toast.success(
 				`Outro(a) ${snackEmoji(snack.snack)} ${
 					snack.name
@@ -120,6 +140,7 @@ export function OrderProvider({ children }: OrderProviderProps) {
 			const newCartSnack = { ...snack, quantity, subtotal };
 
 			setCart((oldCart) => [...oldCart, newCartSnack]);
+			manageLocalStorage([...cart, newCartSnack]);
 			toast.success(
 				`${snackEmoji(snack.snack)} ${snack.name} adicionado aos pedidos!`,
 			);
