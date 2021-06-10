@@ -19,4 +19,13 @@ export const Title = styled.h1`
 		flex-shrink: 0;
 		border-radius: 4px;
 	}
+
+	@media (max-width: 720px) {
+		font-size: 2rem;
+		justify-content: center;
+
+		&::before {
+			display: none;
+		}
+	}
 `;
