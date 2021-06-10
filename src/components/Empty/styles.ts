@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.main`
+export const Container = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+
+	padding: 1.25rem 0.5rem;
 
 	h2 {
 		max-width: 500px;

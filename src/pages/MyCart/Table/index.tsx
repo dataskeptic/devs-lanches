@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Empty } from '../../../components/Empty';
 import { useOrder } from '../../../contexts/OrderContext';
 
 import { TableDesktop } from './TableDesktop';
 import { TableMobile } from './TableMobile';
-import { Empty } from '../Empty';
 
 export function Table() {
 	const [windowWidth, setWindowWidth] = useState(
@@ -27,7 +27,8 @@ export function Table() {
 		};
 	}, []);
 
-	if (cart.length === 0) return <Empty />;
+	if (cart.length === 0)
+		return <Empty title="Ops! Parece que você não tem pedidos, peça já!" />;
 
 	return windowWidth > 768 ? <TableDesktop /> : <TableMobile />;
 }

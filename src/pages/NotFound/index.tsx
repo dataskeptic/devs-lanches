@@ -1,3 +1,11 @@
+import { Empty } from '../../components/Empty';
+
+import { Container } from './styles';
+
 export function NotFound() {
-	return <h1>NotFound</h1>;
+	return (
+		<Container>
+			<Empty title="Ops! Parece que essa página não existe..." />
+		</Container>
+	);
 }
