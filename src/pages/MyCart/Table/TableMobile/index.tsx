@@ -18,7 +18,7 @@ export function TableMobile() {
 	return (
 		<Container>
 			{cart.map((item) => (
-				<div key={item.id} className="order-item">
+				<div key={`${item.snack}-${item.id}`} className="order-item">
 					<div>
 						<img src={item.image} alt={item.name} />
 					</div>
