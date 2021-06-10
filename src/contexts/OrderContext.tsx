@@ -11,6 +11,12 @@ interface Snack extends SnackData {
 	subtotal: number;
 }
 
+interface SnackCartHandlers {
+	id: number;
+	snack: string;
+	quantity: number;
+}
+
 interface UpdateCartProps {
 	id: number;
 	snack: string;
@@ -28,6 +34,9 @@ interface OrderContextProps {
 	updateCart: ({ id, snack, newQuantity }: UpdateCartProps) => void;
 	removeItemFromCart: ({ id, snack }: RemoveItemFromCartProps) => void;
 	confirmOrder: () => void;
+	handleProductIncrement: ({ id, snack, quantity }: SnackCartHandlers) => void;
+	handleProductDecrement: ({ id, snack, quantity }: SnackCartHandlers) => void;
+	handleRemoveProduct: ({ id, snack }: SnackCartHandlers) => void;
 }
 
 interface OrderProviderProps {
@@ -117,6 +126,18 @@ export function OrderProvider({ children }: OrderProviderProps) {
 		}
 	}
 
+	function handleProductIncrement({ id, snack, quantity }: SnackCartHandlers) {
+		updateCart({ id, snack, newQuantity: quantity + 1 });
+	}
+
+	function handleProductDecrement({ id, snack, quantity }: SnackCartHandlers) {
+		updateCart({ id, snack, newQuantity: quantity - 1 });
+	}
+
+	function handleRemoveProduct({ id, snack }: SnackCartHandlers) {
+		removeItemFromCart({ id, snack });
+	}
+
 	return (
 		<OrderContext.Provider
 			value={{
@@ -125,6 +146,9 @@ export function OrderProvider({ children }: OrderProviderProps) {
 				updateCart,
 				removeItemFromCart,
 				confirmOrder,
+				handleProductIncrement,
+				handleProductDecrement,
+				handleRemoveProduct,
 			}}
 		>
 			{children}
