@@ -1,10 +1,4 @@
-import {
-	createContext,
-	ReactNode,
-	useContext,
-	useEffect,
-	useState,
-} from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 import { SnackData } from '../interface/snackData';
 import { api } from '../services/api';
