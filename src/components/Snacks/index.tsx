@@ -2,7 +2,7 @@ import { FiPlus } from 'react-icons/fi';
 
 import { SnackData } from '../../interface/snackData';
 import { currencyFormat } from '../../helpers/currencyFormat';
-import { useOrder } from '../../contexts/OrderContext';
+import { useOrder } from '../../contexts/CartContext';
 
 import { Container } from './styles';
 import { SkeletonSnack } from './SkeletonSnack';

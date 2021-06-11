@@ -3,7 +3,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 import plusImg from '../../../../assets/circle-plus.svg';
 import minusImg from '../../../../assets/circle-minus.svg';
 
-import { useOrder } from '../../../../contexts/OrderContext';
+import { useOrder } from '../../../../contexts/CartContext';
 import { currencyFormat } from '../../../../helpers/currencyFormat';
 
 import { Container } from './styles';

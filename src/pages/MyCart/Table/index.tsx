@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Empty } from '../../../components/Empty';
-import { useOrder } from '../../../contexts/OrderContext';
+import { useOrder } from '../../../contexts/CartContext';
 
 import { TableDesktop } from './TableDesktop';
 import { TableMobile } from './TableMobile';

@@ -1,4 +1,4 @@
-import { useOrder } from '../../contexts/OrderContext';
+import { useOrder } from '../../contexts/CartContext';
 
 import { currencyFormat } from '../../helpers/currencyFormat';
 import { Container } from './styles';
