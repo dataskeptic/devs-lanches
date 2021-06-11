@@ -1,7 +1,7 @@
 import { SnackTitle } from '../../../components/SnackTitle';
 import { Snacks } from '../../../components/Snacks';
 
-import { useSnack } from '../../../contexts/SnackContext';
+import { useSnack } from '../../../hooks/useSnack';
 
 export function Drinks() {
 	const { drinks } = useSnack();
