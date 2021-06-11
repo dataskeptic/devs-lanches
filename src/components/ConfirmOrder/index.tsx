@@ -1,10 +1,10 @@
-import { useOrder } from '../../contexts/CartContext';
-
 import { currencyFormat } from '../../helpers/currencyFormat';
+import { useCart } from '../../hooks/useCart';
+
 import { Container } from './styles';
 
 export function ConfirmOrder() {
-	const { cart, confirmOrder } = useOrder();
+	const { cart, confirmOrder } = useCart();
 
 	const totalAmount = cart.reduce((acc, item) => (acc += item.subtotal), 0);
 

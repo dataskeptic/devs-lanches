@@ -3,11 +3,12 @@ import { FaTrashAlt } from 'react-icons/fa';
 import plusImg from '../../../../assets/circle-plus.svg';
 import minusImg from '../../../../assets/circle-minus.svg';
 
-import { useOrder } from '../../../../contexts/CartContext';
 import { currencyFormat } from '../../../../helpers/currencyFormat';
+import { useCart } from '../../../../hooks/useCart';
+
+import { ConfirmOrder } from '../../../../components/ConfirmOrder';
 
 import { Container } from './styles';
-import { ConfirmOrder } from '../../../../components/ConfirmOrder';
 
 export function TableDesktop() {
 	const {
@@ -15,7 +16,7 @@ export function TableDesktop() {
 		handleProductIncrement,
 		handleProductDecrement,
 		handleRemoveProduct,
-	} = useOrder();
+	} = useCart();
 
 	return (
 		<Container>

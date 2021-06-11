@@ -2,17 +2,18 @@ import { FiPlus } from 'react-icons/fi';
 
 import { SnackData } from '../../interface/snackData';
 import { currencyFormat } from '../../helpers/currencyFormat';
-import { useOrder } from '../../contexts/CartContext';
+import { useCart } from '../../hooks/useCart';
+
+import { SkeletonSnack } from './SkeletonSnack';
 
 import { Container } from './styles';
-import { SkeletonSnack } from './SkeletonSnack';
 
 interface SnacksProps {
 	snacks: SnackData[];
 }
 
 export function Snacks({ snacks }: SnacksProps) {
-	const { cart, addSnackIntoCart } = useOrder();
+	const { cart, addSnackIntoCart } = useCart();
 
 	return (
 		<Container>

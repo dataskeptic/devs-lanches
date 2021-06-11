@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Empty } from '../../../components/Empty';
-import { useOrder } from '../../../contexts/CartContext';
 
+import { useCart } from '../../../hooks/useCart';
+
+import { Empty } from '../../../components/Empty';
 import { TableDesktop } from './TableDesktop';
 import { TableMobile } from './TableMobile';
 
@@ -9,7 +10,7 @@ export function Table() {
 	const [windowWidth, setWindowWidth] = useState(
 		document.documentElement.clientWidth,
 	);
-	const { cart } = useOrder();
+	const { cart } = useCart();
 
 	useEffect(() => {
 		function updateTableComponentBasedInWindowWidth() {

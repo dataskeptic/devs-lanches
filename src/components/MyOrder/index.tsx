@@ -1,10 +1,11 @@
 import { ReactComponent as CartIcon } from '../../assets/shopping-cart.svg';
-import { useOrder } from '../../contexts/CartContext';
+
+import { useCart } from '../../hooks/useCart';
 
 import { Container } from './styles';
 
 export function MyOrder() {
-	const { cart } = useOrder();
+	const { cart } = useCart();
 
 	return (
 		<Container to="cart">

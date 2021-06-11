@@ -1,11 +1,13 @@
+import { FaTrashAlt } from 'react-icons/fa';
+
 import plusImg from '../../../../assets/circle-plus.svg';
 import minusImg from '../../../../assets/circle-minus.svg';
 
-import { Container } from './styles';
-import { FaTrashAlt } from 'react-icons/fa';
-import { useOrder } from '../../../../contexts/CartContext';
 import { currencyFormat } from '../../../../helpers/currencyFormat';
 import { ConfirmOrder } from '../../../../components/ConfirmOrder';
+
+import { Container } from './styles';
+import { useCart } from '../../../../hooks/useCart';
 
 export function TableMobile() {
 	const {
@@ -13,7 +15,7 @@ export function TableMobile() {
 		handleProductIncrement,
 		handleProductDecrement,
 		handleRemoveProduct,
-	} = useOrder();
+	} = useCart();
 
 	return (
 		<Container>

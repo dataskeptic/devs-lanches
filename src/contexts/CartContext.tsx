@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, ReactNode, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 
@@ -44,7 +44,7 @@ interface CartProviderProps {
 
 const localStorageItem = '@DevsLanches:cart';
 
-const CartContext = createContext({} as CartContextProps);
+export const CartContext = createContext({} as CartContextProps);
 
 export function CartProvider({ children }: CartProviderProps) {
 	const navigate = useNavigate();
@@ -174,9 +174,4 @@ export function CartProvider({ children }: CartProviderProps) {
 			{children}
 		</CartContext.Provider>
 	);
-}
-
-export function useOrder() {
-	const contextData = useContext(CartContext);
-	return contextData;
 }
