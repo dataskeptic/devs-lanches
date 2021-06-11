@@ -20,7 +20,7 @@ interface SnackProviderProps {
 	children: ReactNode;
 }
 
-const SnackContext = createContext({} as SnackContextProps);
+export const SnackContext = createContext({} as SnackContextProps);
 
 export function SnackProvider({ children }: SnackProviderProps) {
 	const [burgers, setBurgers] = useState<SnackData[]>([]);
@@ -65,9 +65,4 @@ export function SnackProvider({ children }: SnackProviderProps) {
 			{children}
 		</SnackContext.Provider>
 	);
-}
-
-export function useSnack() {
-	const contextData = useContext(SnackContext);
-	return contextData;
 }
