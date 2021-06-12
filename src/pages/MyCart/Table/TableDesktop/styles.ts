@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-	background: var(--black);
+	background: ${({ theme }) => theme.colors.black};
 	padding: 2rem 2.5rem;
 	border-radius: 8px;
 
@@ -26,7 +26,7 @@ export const Container = styled.main`
 		td {
 			padding: 1.5rem 1rem 1.5rem 1rem;
 			padding-top: 1.5rem;
-			border-bottom: 1px solid var(--black-light);
+			border-bottom: 1px solid ${({ theme }) => theme.colors.blackLight};
 
 			h4 {
 				margin-bottom: 0.5rem;
@@ -60,13 +60,13 @@ export const Container = styled.main`
 
 				span {
 					display: block;
-					background: var(--white);
+					background: ${({ theme }) => theme.colors.white};
 					padding: 0.125rem 0.75rem;
 					border-radius: 4px;
 
 					font-weight: 500;
 					font-size: 1.25rem;
-					color: var(--black);
+					color: ${({ theme }) => theme.colors.black};
 				}
 			}
 
@@ -111,7 +111,7 @@ export const Container = styled.main`
 					justify-content: flex-end;
 
 					svg {
-						fill: var(--yellow);
+						fill: ${({ theme }) => theme.colors.yellow};
 						width: 1.5rem;
 						height: 1.5rem;
 					}

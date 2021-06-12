@@ -6,7 +6,7 @@ export const Container = styled.div`
 	gap: 1.5rem;
 
 	.order-item {
-		background: var(--black);
+		background: ${({ theme }) => theme.colors.black};
 		padding: 1.75rem 1.5rem;
 		border-radius: 4px;
 
@@ -67,13 +67,13 @@ export const Container = styled.div`
 
 					span {
 						display: block;
-						background: var(--white);
+						background: ${({ theme }) => theme.colors.white};
 						padding: 0.125rem 0.75rem;
 						border-radius: 4px;
 
 						font-weight: 500;
 						font-size: 1.75rem;
-						color: var(--black);
+						color: ${({ theme }) => theme.colors.black};
 					}
 				}
 
@@ -87,7 +87,7 @@ export const Container = styled.div`
 					justify-content: center;
 
 					svg {
-						fill: var(--yellow);
+						fill: ${({ theme }) => theme.colors.yellow};
 						width: 2rem;
 						height: 2rem;
 					}

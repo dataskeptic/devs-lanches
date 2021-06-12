@@ -20,9 +20,9 @@ const shimmerEffect = keyframes`
 export const SkeletonElement = styled.div<SkeletonProps>`
 	background: linear-gradient(
 		90deg,
-		var(--background) 0%,
+		${({ theme }) => theme.colors.background} 0%,
 		#0a0a0a 40%,
-		var(--background) 100%
+		${({ theme }) => theme.colors.background} 100%
 	);
 	background-size: 200%;
 	border-radius: 4px;

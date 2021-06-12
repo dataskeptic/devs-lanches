@@ -13,7 +13,7 @@ export const Title = styled.h1`
 
 	&::before {
 		content: '';
-		background: var(--white);
+		background: ${({ theme }) => theme.colors.white};
 		width: 42px;
 		height: 5px;
 		flex-shrink: 0;

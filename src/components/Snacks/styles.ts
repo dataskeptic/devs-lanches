@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 	.snack {
 		position: relative;
-		background: var(--black);
+		background: ${({ theme }) => theme.colors.black};
 		padding: 1.75rem 1.5rem;
 		border-radius: 4px;
 
@@ -25,7 +25,7 @@ export const Container = styled.div`
 			top: -0.5rem;
 			left: -0.5rem;
 
-			background: var(--red);
+			background: ${({ theme }) => theme.colors.red};
 			width: 2rem;
 			height: 2rem;
 			border-radius: 50%;
@@ -70,7 +70,7 @@ export const Container = styled.div`
 			}
 
 			button {
-				background: var(--red);
+				background: ${({ theme }) => theme.colors.red};
 				width: 3rem;
 				height: 3rem;
 				border: none;
@@ -83,7 +83,7 @@ export const Container = styled.div`
 				transition: background 0.3s;
 
 				svg {
-					stroke: var(--white);
+					stroke: ${({ theme }) => theme.colors.white};
 					width: 1.5rem;
 					height: 1.5rem;
 				}

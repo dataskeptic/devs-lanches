@@ -8,17 +8,20 @@ import { SnackProvider } from './contexts/SnackContext';
 import { AppRoutes } from './routes';
 
 import { GlobalStyle } from './styles/global';
+import { Theme } from './styles/Theme';
 
 export function App() {
 	return (
 		<BrowserRouter>
-			<SnackProvider>
-				<CartProvider>
-					<AppRoutes />
-					<ToastContainer autoClose={2000} />
-					<GlobalStyle />
-				</CartProvider>
-			</SnackProvider>
+			<Theme>
+				<SnackProvider>
+					<CartProvider>
+						<AppRoutes />
+						<ToastContainer autoClose={2000} />
+						<GlobalStyle />
+					</CartProvider>
+				</SnackProvider>
+			</Theme>
 		</BrowserRouter>
 	);
 }

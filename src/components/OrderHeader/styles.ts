@@ -25,11 +25,11 @@ export const Container = styled.header`
 			h3 {
 				margin-bottom: 0.125rem;
 				font-weight: 500;
-				color: var(--white);
+				color: ${({ theme }) => theme.colors.white};
 			}
 
 			span {
-				color: var(--yellow);
+				color: ${({ theme }) => theme.colors.yellow};
 
 				strong {
 					font-weight: 500;
@@ -40,7 +40,7 @@ export const Container = styled.header`
 
 		svg {
 			flex-shrink: 0;
-			fill: var(--white);
+			fill: ${({ theme }) => theme.colors.white};
 			width: 2.875rem;
 			height: 2.875rem;
 		}

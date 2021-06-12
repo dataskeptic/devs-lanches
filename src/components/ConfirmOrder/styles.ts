@@ -9,7 +9,7 @@ export const Container = styled.footer`
 	justify-content: space-between;
 
 	button {
-		background: var(--red);
+		background: ${({ theme }) => theme.colors.red};
 		width: 100%;
 		max-width: 16.5rem;
 		min-height: 4rem;
@@ -20,7 +20,7 @@ export const Container = styled.footer`
 		font-weight: 700;
 		font-size: 1.25rem;
 		text-transform: uppercase;
-		color: var(--white);
+		color: ${({ theme }) => theme.colors.white};
 
 		transition: background 0.3s;
 

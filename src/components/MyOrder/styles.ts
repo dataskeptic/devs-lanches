@@ -7,7 +7,7 @@ export const Container = styled(Link)`
 	right: 1.5rem;
 	bottom: 0.5rem;
 
-	background: var(--red);
+	background: ${({ theme }) => theme.colors.red};
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 
@@ -27,7 +27,7 @@ export const Container = styled(Link)`
 	}
 
 	svg {
-		fill: var(--white);
+		fill: ${({ theme }) => theme.colors.white};
 		width: 2rem;
 		height: 2rem;
 	}
@@ -36,7 +36,7 @@ export const Container = styled(Link)`
 		margin-left: 0.75rem;
 		font-weight: 500;
 		font-size: 1.5rem;
-		color: var(--yellow);
+		color: ${({ theme }) => theme.colors.yellow};
 	}
 
 	@media (max-width: 720px) {

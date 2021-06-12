@@ -1,15 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  :root {
-    --background: #121414;
-    --red: #AA2424;
-    --yellow: #FECA57;
-    --white: #F0F0F0;
-    --black: #2D2D2D;
-    --black-light: #565656;
-  }
-
   * {
     margin: 0;
     padding: 0;
@@ -24,9 +15,9 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   body {
-    background: var(--background);
+    background: ${({ theme }) => theme.colors.background};
     -webkit-font-smoothing: antialiased;
-    color: var(--white);
+    color: ${({ theme }) => theme.colors.white};
   }
   body,
   input,
@@ -48,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .skeleton-wrapper {
-    background: var(--black);
+    background: ${({ theme }) => theme.colors.black};
     width: 100%;
     padding: 1rem;
     border-radius: 10px;
